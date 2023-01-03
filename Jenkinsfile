@@ -6,10 +6,11 @@ slack_channel = 'jenkins'
 pipeline
 {
     agent{
-        docker {
-            label 'ec2'
-            image 'ashwin7227/mobile-ci:latest'
-        }
+//         docker {
+//             label 'ec2'
+//             image 'ashwin7227/mobile-ci:latest'
+//         }
+        any
     }
     stages{
         stage('Init')
