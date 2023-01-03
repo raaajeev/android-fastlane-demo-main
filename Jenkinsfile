@@ -144,7 +144,16 @@ parameters {
   // the default choice for commit-triggered builds is the first item in the choices list
   choice(name: 'buildVariant', choices: ['Debug_Scan_Only', 'Debug_TestFlight', 'Release_AppStore_TestFlight'], description: 'The variants to build')
  }
-environment {...}
+environment {
+LC_ALL = 'en_US.UTF-8'
+APP_NAME = 'AdManagerTest'
+BUILD_NAME = 'AdManagerTest'
+APP_TARGET = 'AdManagerTest'
+APP_PROJECT = 'AdManagerTest.xcodeproj'
+APP_WORKSPACE = 'AdManagerTest.xcworkspace'
+APP_TEST_SCHEME = 'AdManagerTest'
+PUBLISH_TO_CHANNEL = 'teams'
+}
 stages {
 //<< Git SCM Checkout >>
   stage('Git Checkout') {
